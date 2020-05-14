@@ -7,15 +7,17 @@ public class Pc {
 	private String genNo;
 	private String modelNo;
 	private String url;
+	private String electric;
 	private String date;
 
-	public Pc (String pcId,String pcClass,String rank,String genNo,String modelNo,String url,String date) {
+	public Pc (String pcId,String pcClass,String rank,String genNo,String modelNo,String url,String electric,String date) {
 		this.pcId = pcId;
 		this.pcClass = pcClass;
 		this.rank = rank;
 		this.genNo = genNo;
 		this.modelNo = modelNo;
 		this.url = url;
+		this.electric = electric;
 		this.date = date;
 	}
 	public String getPcId() { return pcId; }
@@ -24,5 +26,6 @@ public class Pc {
 	public String getGenNo() { return genNo; }
 	public String getModelNo() { return modelNo; }
 	public String getUrl() { return url; }
+	public String getElectric() {return electric; }
 	public String getDate() { return date; }
 }
