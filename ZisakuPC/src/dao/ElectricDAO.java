@@ -22,7 +22,7 @@ public class ElectricDAO{
 		List<Electric> elcList = new ArrayList<>();
 
 		try(Connection conn = DriverManager.getConnection(JDBC_URL,DB_USER,DB_PASS)){
-			String sql = "SELECT * FROM ELECTRIC WHERE CAPACITY <= ? ";
+			String sql = "SELECT * FROM ELECTRIC WHERE CAPACITY >= ? ";
 
 		      PreparedStatement pStmt = conn.prepareStatement(sql);
 		      pStmt.setDouble(1, cap );

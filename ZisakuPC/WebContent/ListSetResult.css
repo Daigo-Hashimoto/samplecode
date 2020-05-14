@@ -18,7 +18,7 @@ h6{
 header{
 	position:relative;
 	height:30vh;
-	background: url("D:/code/素材画像等/gori0I9A3053072102529_TP_V.jpg") center / cover ;
+	background: url(file:///D:/code/ZisakuPC/WebContent/gori0I9A3053072102529_TP_V.jpg) center / cover ;
 }
 
 
@@ -36,7 +36,7 @@ body {
 	color: #000;
 	font-size: 15px;
 	line-height: 150%;
-	background: url("D:/code/素材画像等/wood-texture_00124.jpg") center center / cover no-repeat fixed;
+	background: url(file:///D:/code/ZisakuPC/WebContent/wood-texture_00124.jpg) center center / cover no-repeat fixed;
 }
 
 table{
