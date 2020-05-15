@@ -39,6 +39,7 @@
 </table>
 
 <br>そしてこの電力(${sum})に合う電源のおすすめ！！<br>
+<div id="side"></div>
 
 <table id = "elctable" border="1" cellpadding="5" cellspacing="0" >
 
@@ -47,7 +48,7 @@
 <td>電源の容量</td>
 <td>価格コムへのリンク</td>
 </tr>
-<c:forEach var="elc" items="${elcList}">
+<c:forEach var="electric" items="${elcList}">
 
 <tr bgcolor="#bdb76b">
 <td>${electric.elcModelNo}</td><td>${electric.capacity}</td><td><a href ="${electric.url}" target = "_blank"><center>電源の詳細はコチラ！</center></a></td>

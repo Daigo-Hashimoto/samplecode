@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bean.ElcBean;
 import bean.PcBean;
 import dao.RankDAO;
+import model.ElectricLogic;
 import model.PcLogic;
 
 /**
@@ -39,6 +41,39 @@ public class PcSelectServlet extends HttpServlet {
 
 		request.setAttribute("pcList", pcList);
 		request.setAttribute("rankName", rankName);
+
+
+
+		double sum = 0.0;
+		double coe = 0.0;
+
+		for (PcBean module: pcList) {
+			String str =  module.getElectric();
+			if(str == null||str.equals("")){
+				str = "0.0" ;
+			}
+			double electlic = Double.parseDouble(str);
+			sum += electlic;
+
+		}
+		switch(rank) {
+			case  "LOW":
+			case  "MID":
+				coe = 1.2;
+				break;
+			case "HIGH":
+				coe = 1.5 ;
+				break;
+		}
+		sum *= coe;
+
+		ElectricLogic electricLogic = new ElectricLogic();
+		List<ElcBean> elcList = electricLogic.excute(sum);
+
+		request.setAttribute("sum", sum);
+		request.setAttribute("elcList", elcList);
+
+
 
 		RequestDispatcher despatcher = request.getRequestDispatcher("/WEB-INF/jsp/ListSetResult.jsp");
 		despatcher.forward(request, response);

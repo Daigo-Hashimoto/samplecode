@@ -22,7 +22,7 @@ public class PcDAO{
 		List<Pc> pcList = new ArrayList<>();
 
 		try(Connection conn = DriverManager.getConnection(JDBC_URL,DB_USER,DB_PASS)){
-			String sql = "SELECT * FROM PC WHERE RANK = ? AND PCCLASS = ? ORDER BY GENNO DESC ";//OFFSET 0 ROWS FETCH NEXT 1 LOWS ONLY
+			String sql = "SELECT DISTINCT PCID,PCCLASS,RANK,GENNO,MODELNO,URL,DATE,ELECTRIC FROM PC WHERE RANK = ? AND PCCLASS = ? ORDER BY GENNO DESC LIMIT 1";//OFFSET 0 ROWS FETCH NEXT 1 LOWS ONLY
 
 		      PreparedStatement pStmt = conn.prepareStatement(sql);
 		      pStmt.setString(1, rank );
